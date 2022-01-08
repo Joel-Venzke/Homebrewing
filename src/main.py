@@ -18,3 +18,9 @@ if __name__ == '__main__':
 
     recpie = Recpie('My beer', fermentable_dict, hop_records)
     print(recpie)
+    recpie.save_json('test.json')
+
+    new_recpie = Recpie()
+    print(new_recpie)
+    new_recpie.load_json('test.json')
+    print(new_recpie)
