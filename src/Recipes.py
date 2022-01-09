@@ -2,11 +2,11 @@ from Fermentables import Fermentables, Grain
 from Hops import Hops, Hop
 import json
 
-class Recpie(object):
-    """docstring for Recpie."""
+class Recipe(object):
+    """docstring for Recipe."""
 
     def __init__(self, name=None, fermentable_dict={}, hop_records={}, yeast_records={}, mash_profile_records={}):
-        super(Recpie, self).__init__()
+        super(Recipe, self).__init__()
         self.name = name
         self.load_fermentables_from_dict(fermentable_dict)
         self.load_hops_from_records(hop_records)
@@ -46,7 +46,7 @@ class Recpie(object):
                 yield (key, value)
 
     def __repr__(self):
-        return_str = f'Recpie: "{self.name}"\n'
+        return_str = f'Recipe: "{self.name}"\n'
         return_str += '-'*(len(return_str)-1)+'\n'
         return_str += str(self.fermentables)
         return_str += str(self.hops)
